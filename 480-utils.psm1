@@ -15,7 +15,7 @@ function 480Connect([string] $server)
 {
     $conn = $global:DefaultVIServer
     #connected?
-    if [$conn]{
+    if ($conn){
       $msg = "You are already connected to: {0}" -f $conn
 
       Write-Host -ForeGroundColor Green $msg
