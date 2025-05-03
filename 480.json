@@ -1,0 +1,7 @@
+{
+    "vcenter_server" : "vcenter.ainsley.local",
+    "vm_host" : "192.168.3.208",
+    "network" : "480-WAN",
+    "base_folder" : "BASEVM",
+    "snapshot" : "Base"
+}
