@@ -3,18 +3,17 @@ function 480Banner()
     Write-Host "Hello SYS480-Devops"
 }
 
-function 480Connect([string] $server)
-{
-    $conn = $global:DefaultVIServer
+function 480Connect([string] $server){
+   
     #connected?
-    if ($conn){
-      $msg = "You are already connected to: {0}" -f $conn
-
-      Write-Host -ForeGroundColor Green $msg
+    if ($global:DefaultVIServer){
+        Write-Host -ForeGroundColor Green "You are already connected to: $($global:DefaultVIServer.name)"
+        return
 
     }
     else{
-        $conn=Connect-VIServer -Server $server
+        Connect-VIServer -Server $server
+        Write-Host -ForeGroundColor Green $msg
     }
 }
 
@@ -55,3 +54,4 @@ function Select-VM([string] $folder)
 
     }
 }
+
